@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>정수 역순 출력</title>
+</head>
+<body>
+
+    <div id="display"></div>
+
+    <script>
+        // 5개의 정수를 입력받아 배열에 저장하는 함수
+        function getNumbers() {
+            let arr = [];
+            for (let i = 0; i < 5; i++) {
+                let input = prompt((i + 1) + "번째 정수를 입력하세요:");
+                arr.push(parseInt(input));
+            }
+            return arr;
+        }
+
+        // 실행 및 출력
+        const numbers = getNumbers(); // 함수 반복 호출 및 저장
+        const reversed = [...numbers].reverse(); // 반대 순서로 변환
+
+        // 화면에 결과 출력
+        document.getElementById('display').innerHTML = 
+            "입력된 값: " + numbers.join(", ") + "<br>" + "<hr>" + 
+            "역순 결과: " + reversed.join(", ");
+    </script>
+</body>
+</html>
